@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'run_report#event'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  root 'run_report#index'
+  get '/date', to: 'run_report#date'
+  get '/page_view', to: 'run_report#page_view'
+  get '/event_count', to: 'run_report#event_count'
+  get '/new_users', to: 'run_report#new_users'
+  get '/origin', to: 'run_report#origin'
+  get '/page_path', to: 'run_report#page_path'
+  get '/landing_page', to: 'run_report#landing_page'
+  get '/city', to: 'run_report#city'
+  get '/device', to: 'run_report#device'
 end
