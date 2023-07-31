@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY Gemfile Gemfile.lock ./
 
-RUN gem install bundler:2.2.28
+RUN gem install bundler
 RUN bundle install
 
 COPY . .

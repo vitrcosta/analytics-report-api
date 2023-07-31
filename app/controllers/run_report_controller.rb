@@ -65,7 +65,7 @@ class RunReportController < ApplicationController
     end_date = Date.parse(params[:end_date])
     request = Google::Apis::AnalyticsdataV1alpha::RunReportRequest.new(
       dimensions: [
-        Google::Apis::AnalyticsdataV1alpha::Dimension.new(name: 'date')
+        Google::Apis::AnalyticsdataV1alpha::Dimension.new(name: params[:dimension])
       ],
       metrics: [
         Google::Apis::AnalyticsdataV1alpha::Metric.new(
@@ -88,7 +88,7 @@ class RunReportController < ApplicationController
       order_bys: [
         Google::Apis::AnalyticsdataV1alpha::OrderBy.new(
           dimension: Google::Apis::AnalyticsdataV1alpha::DimensionOrderBy.new(
-            dimension_name: 'date',
+            dimension_name: params[:dimension],
             order_type: 'NUMERIC'
            ),
           desc: false
