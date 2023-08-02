@@ -11,6 +11,10 @@ class RunReportController < ApplicationController
             image_data = StringIO.new( Base64.decode64(params[:image]))
             pdf.image(image_data)
           end
-        send_data pdf.render, filename: 'relatorio.pdf', type: 'application/pdf'
+          respond_to do |format|
+            format.pdf do
+                send_data pdf.render, filename: 'relatorio.pdf', type: 'application/pdf'
+            end
+          end
     end
 end
