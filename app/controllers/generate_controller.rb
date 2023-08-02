@@ -1,5 +1,5 @@
 class RunReportController < ApplicationController
-    def generate_pdf()
+    def generate_pdf
         pdf = Prawn::Document.new
         pdf do |pdf|
             pdf.image "#{Rails.root}/app/assets/images/logomarca-criativitta-menu.png", width: 130, height: 33, position: 405, vposition: 10
