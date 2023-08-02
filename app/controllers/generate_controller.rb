@@ -1,4 +1,4 @@
-class RunReportController < ApplicationController
+class GenerateController < ApplicationController
     def generate_pdf
         pdf = Prawn::Document.new
         pdf do |pdf|
