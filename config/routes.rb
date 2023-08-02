@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get '/landing_page', to: 'run_report#landing_page'
   get '/city', to: 'run_report#city'
   get '/device', to: 'run_report#device'
+
+  get '/pdf', to: 'generate#generate_pdf'
 end
