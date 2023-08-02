@@ -24,7 +24,6 @@ gem 'bootsnap', require: false
 # gem "rack-cors"
 gem 'google-api-client'
 gem 'prawn'
-gem 'stringio'
 gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development]
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
