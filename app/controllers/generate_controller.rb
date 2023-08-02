@@ -8,7 +8,7 @@ class GenerateController < ApplicationController
         pdf.text "Período: " + params[:start_date] + " até " + params[:end_date]
         pdf.move_down 20
         image_data = StringIO.new( Base64.decode64(params[:image]))
-        pdf.image(image_data)
+        pdf.image image_data, width: 130
         respond_to do |format|
             format.pdf do
                 send_data pdf.render, filename: 'relatorio.pdf', type: 'application/pdf'
