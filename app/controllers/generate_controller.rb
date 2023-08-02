@@ -1,7 +1,7 @@
 class GenerateController < ApplicationController
     def generate_pdf
         pdf = Prawn::Document.new
-        pdf.image "#{Rails.root}/app/assets/images/logomarca-criativitta-menu.png", width: 130, height: 33, position: 405, vposition: 10
+        # pdf.image "#{Rails.root}/app/assets/images/logomarca-criativitta-menu.png", width: 130, height: 33, position: 405, vposition: 10
         pdf.text "RELATÓRIO DE ACESSOS - CRIATIVITTÁ"
         pdf.stroke_horizontal_rule
         pdf.move_down 20
