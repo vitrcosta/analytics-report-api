@@ -1,5 +1,6 @@
 class GenerateController < ApplicationController
     def generate_pdf
+        teste = 'preciso apaga isso'
         pdf = Prawn::Document.new
         # pdf.image "#{Rails.root}/app/assets/images/logomarca-criativitta-menu.png", width: 130, height: 33, position: 405, vposition: 10
         pdf.text "RELATÓRIO DE ACESSOS - CRIATIVITTÁ"
