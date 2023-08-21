@@ -75,8 +75,6 @@ gem 'bootsnap', require: false
 
 gem 'google-api-client'
 gem 'matrix'
-gem 'prawn'
-gem 'stringio'
 gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development]
 
 
