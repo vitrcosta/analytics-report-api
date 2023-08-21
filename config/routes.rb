@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   get '/city', to: 'run_report#city'
   get '/device', to: 'run_report#device'
 
-  post '/pdf', to: 'generate#generate_pdf'
 end
