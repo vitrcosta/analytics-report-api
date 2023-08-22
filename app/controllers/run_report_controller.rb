@@ -286,6 +286,39 @@ class RunReportController < ApplicationController
     render json: response, status: 200
   end
 
+  def country
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+    request = Google::Apis::AnalyticsdataV1alpha::RunReportRequest.new(
+      dimensions: [
+        Google::Apis::AnalyticsdataV1alpha::Dimension.new(name: 'country')
+      ],
+      metrics: [
+        Google::Apis::AnalyticsdataV1alpha::Metric.new(
+          name: 'sessions'
+        )
+      ],
+      date_ranges: [
+        Google::Apis::AnalyticsdataV1alpha::DateRange.new(
+          start_date: start_date.strftime('%Y-%m-%d'),
+          end_date: end_date.strftime('%Y-%m-%d')
+        )
+      ],
+      order_bys: [
+        Google::Apis::AnalyticsdataV1alpha::OrderBy.new(
+          metric: Google::Apis::AnalyticsdataV1alpha::MetricOrderBy.new(
+            metric_name: 'sessions',
+            order_type: 'NUMERIC'
+            ),
+          desc: true
+        )
+      ]
+    )
+    property_id = params[:property_id]
+    response = $client.run_report(property_id, request)
+    render json: response, status: 200
+  end
+
   def device
     start_date = Date.parse(params[:start_date])
     end_date = Date.parse(params[:end_date])

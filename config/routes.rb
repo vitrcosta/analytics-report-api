@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/page_path', to: 'run_report#page_path'
   get '/landing_page', to: 'run_report#landing_page'
   get '/city', to: 'run_report#city'
+  get '/country', to: 'run_report#country'
   get '/device', to: 'run_report#device'
 
 end
